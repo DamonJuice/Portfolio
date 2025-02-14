@@ -24,15 +24,17 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
+  /* display: flex; */
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  padding-top: 60px;
 }
 
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+  color: #646cff;
 }
 
 button {
@@ -66,3 +68,48 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+.nav-link {
+  font-size: 1.2rem; 
+  font-weight: 600;
+  padding: 4px 12px; 
+  border-radius: 6px; 
+  background-color: rgba(0, 0, 0, 0.877); 
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: inline-block;
+  margin: 0 5px;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  transform: scale(1.05);
+  color: #000000;
+}
+
+.nav-bar {
+  width: 100%;
+  padding: 20px 12px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  justify-content: space-between;
+  align-items: center;
+  /* box-shadow: 0 4px 40px rgba(108, 26, 155, 0.3); */
+  
+  background: linear-gradient(90deg, black, gray, rgb(255, 255, 255), gray, black );
+  background-size: 300% 300%;
+  animation: ledGradient 10s infinite alternate;
+}
+
+@keyframes ledGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
+
+

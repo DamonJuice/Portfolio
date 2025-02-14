@@ -5,22 +5,30 @@ import './index.css'
 import App from './App.tsx'
 
 
-function NavBar() {
+function Links() {
   return (
-    <nav className="w-full bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white py-4 shadow-lg flex justify-between px-6">
-      <a href="/" className="text-xl font-bold">Damon Stangel</a>
-      <ul className="flex space-x-10 text-lg font-semibold">
-        <li><a href="/" className="hover:text-gray-400 transition">Home</a></li>
-        <li><a href="/about" className="hover:text-gray-400 transition">About Me</a></li>
-        <li><a href="/projects" className="hover:text-gray-400 transition">Projects</a></li>
-      </ul>
-    </nav>
+    
+<nav className="nav-bar">
+  {/* <a 
+    href="https://www.linkedin.com/in/damon-stangel-80155626b/" 
+    className="text-xl font-bold" 
+    target="_blank" 
+    rel="noopener noreferrer"
+  >
+    Damon Stangel
+  </a> */}
+  <div className="flex space-x-6">
+    <a href="/" className="nav-link">Home</a>
+    <a href="/about" className="nav-link">About Me</a>
+    <a href="/projects" className="nav-link">Projects</a>
+  </div>
+</nav>
   );
 }
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <NavBar />
+    <Links />
     <App />
   </StrictMode>,
 )
