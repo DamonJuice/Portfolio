@@ -15,7 +15,6 @@
 
 a {
   font-weight: 500;
-  color: #646cff;
   text-decoration: inherit;
 }
 a:hover {
@@ -26,7 +25,7 @@ body {
   margin: 0;
   /* display: flex; */
   place-items: center;
-  min-width: 320px;
+  /* min-width: 320px; */
   min-height: 100vh;
   padding-top: 60px;
 }
@@ -35,6 +34,8 @@ h1 {
   font-size: 3.2em;
   line-height: 1.1;
   color: #646cff;
+  border: #000000;
+  /* background-color: #1a1a1a; */
 }
 
 button {
@@ -80,6 +81,7 @@ button:focus-visible {
   margin: 0 5px;
   justify-content: center;
   align-items: center;
+  color: #646cff;
 }
 
 .nav-link:hover {
@@ -97,7 +99,6 @@ button:focus-visible {
   z-index: 1000;
   justify-content: space-between;
   align-items: center;
-  /* box-shadow: 0 4px 40px rgba(108, 26, 155, 0.3); */
   
   background: linear-gradient(90deg, black, gray, rgb(255, 255, 255), gray, black );
   background-size: 300% 300%;
@@ -109,6 +110,28 @@ button:focus-visible {
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+.section {
+  height: 90vh; /* Ensures each section fills the screen */
+  /* display: flex; */
+  justify-content: center;
+  /* background-color: rgb(218, 218, 218); */
+
+  background: linear-gradient(90deg, black, gray, rgb(255, 255, 255), gray, black );
+  background-size: 300% 300%;
+  animation: ledGradient 10s infinite reverse;
+
+  width: 99%;
+  border-radius: 6px;
+  margin: 20px 0; /* Adds spacing between sections */
+  padding: 10px; /* Adds internal spacing */
+  align-items: center;
+}
+
 
 
 

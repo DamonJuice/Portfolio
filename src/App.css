@@ -1,5 +1,5 @@
 #root {
-  max-width: 1280px;
+  /* max-width: 1280px; */
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
@@ -35,4 +35,89 @@
 
 .read-the-docs {
   color: #888;
+}
+
+.introSection {
+  background-color: rgb(51, 51, 51);
+  width: 50%;
+  border-radius: 6px;
+  font-size: 2rem;
+  color: white; 
+  padding: 10px
+  
+}
+
+.introHeader {
+font-style: italic;
+/* width: 50px; */
+/* background-color: black; */
+}
+.aboutHeader {
+  font-style: italic;
+}
+.projectsHeader {
+  font-style: italic;
+}
+
+.introContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Keeps text & image in a row */
+  background-color: rgb(51, 51, 51);
+  padding: 20px;
+  border-radius: 6px;
+  width: 80%;
+  margin: auto;
+}
+
+.slideshow-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.active-slide {
+  width: 600px; /* Adjust as needed */
+  height: 750px;
+  object-fit: cover;
+  border-radius: 6px;
+  transition: opacity 1s ease-in-out;
+  border-color: white;
+  border: 2px;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+.skillsSection {
+  text-align: left;
+}
+.listSkills{
+  display: flex;
+  ul{
+    margin-right: 70px;
+  }
+}
+
+.myLinks{
+  margin-left: auto; 
+  display: flex;
+  align-items: center;
+}
+
+.igLogo img {
+  width: 70px; 
+  height: auto; 
+}
+
+.gitLogo img{
+  width: 70px; 
+  height: auto; 
+}
+
+.linkedLogo img {
+  width: 70px; 
+  height: auto; 
 }
