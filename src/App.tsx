@@ -31,7 +31,8 @@ function App() {
         Hello, my name is Damon Stangel. I'm currently an Application Developer for <a href='https://www.prowestgis.com/' target="_blank"> Pro-West & Associates Inc</a>. 
         I consider myself a skilled front-end developer and application developer, who is passionate about building interactive web experiences.
       </p>
-      &nbsp;
+      <p>Download my resume!</p>
+      <button>Download PDF</button>
       &nbsp;
       <p className="skillsSection">
         My skills include: 
@@ -64,6 +65,10 @@ function App() {
         alt="Slideshow"
       />
     </div>
+    {/* Put the social media links underneath the image slideshow */}
+            {/* <a className='igLogo' href="https://www.instagram.com/damonjuice/" target="_blank"> <img src="src/assets/IG LOGO.png" alt="InstaLogo" /> </a>
+            <a className='linkedLogo' href="https://www.linkedin.com/in/damon-stangel-80155626b/" target="_blank"> <img src="src/assets/linkedIn logo.png" alt="LinkedIn Logo"></img> </a>
+            <a className='gitLogo' href="https://github.com/DamonJuice" target="_blank"> <img src="src/assets/git logo.png" alt="GitHub logo"></img> </a> */}
   </div>
 </section>
 

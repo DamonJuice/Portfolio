@@ -101,12 +101,6 @@ font-style: italic;
   }
 }
 
-.myLinks{
-  margin-left: auto; 
-  display: flex;
-  align-items: center;
-}
-
 .igLogo img {
   width: 70px; 
   height: auto; 
