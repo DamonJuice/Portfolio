@@ -1,17 +1,17 @@
 import { useState, useEffect } from "react";
 import './App.css'
+import icon from "./assets/icon.jpg";
+import oldIcon from "./assets/oldIcon.png";
+import bsuFlowers from "./assets/bsuFlowers.jpg";
+import famPic from "./assets/famPic.png";
+import project1Image from "./assets/famPic.png";
+import retroGameBG from "./assets/animatedRetroGameBG.gif";
 
-const images = [
-  "./assets/icon.jpg",
-  "./assets/oldIcon.png",
-  "./assets/bsuFlowers.jpg", 
-  "./assets/famPic.png"
-];
+
+const images = [icon, oldIcon, bsuFlowers, famPic];
 
 const projectLinks = [
-  { url: "https://github.com/yourusername/project1", image: "./assets/famPic.png" },
-  { url: "https://github.com/yourusername/project2", image: "path/to/your/image2.jpg" },
-  { url: "https://github.com/yourusername/project3", image: "path/to/your/image3.jpg" },
+  { url: "https://github.com/yourusername/project1", image: project1Image },
 ];
 
 function App() {
@@ -92,9 +92,9 @@ function App() {
       </div>
     </section>
 
-      {/* PROJECTS SECTION */}
-      <section id="projects" className="section" style={{ backgroundImage: `url('public/assets/animatedRetroGameBG.gif')`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
-        <h1 className='projectsHeader'>Projects</h1>
+  {/* PROJECTS SECTION */}
+  <section id="projects" className="section" style={{ backgroundImage: `url(${retroGameBG})`,backgroundSize: 'cover', backgroundPosition: 'center' }}>
+  <h1 className='projectsHeader'>Projects</h1>
         <div className="projectsContainer">
           <div className="projectsGrid">
             {projectLinks.map((project, index) => (
