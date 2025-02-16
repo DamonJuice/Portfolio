@@ -2,14 +2,14 @@ import { useState, useEffect } from "react";
 import './App.css'
 
 const images = [
-  "src/assets/icon.jpg",
-  "src/assets/oldIcon.png",
-  "src/assets/bsuFlowers.jpg", 
-  "src/assets/famPic.png"
+  "./assets/icon.jpg",
+  "./assets/oldIcon.png",
+  "./assets/bsuFlowers.jpg", 
+  "./assets/famPic.png"
 ];
 
 const projectLinks = [
-  { url: "https://github.com/yourusername/project1", image: "src/assets/famPic.png" },
+  { url: "https://github.com/yourusername/project1", image: "./assets/famPic.png" },
   { url: "https://github.com/yourusername/project2", image: "path/to/your/image2.jpg" },
   { url: "https://github.com/yourusername/project3", image: "path/to/your/image3.jpg" },
 ];
