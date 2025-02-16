@@ -1,0 +1,191 @@
+#root {
+  /* max-width: 1280px; */
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.introSection {
+  background-color: rgb(51, 51, 51);
+  width: 50%;
+  border-radius: 6px;
+  font-size: 2rem;
+  color: white; 
+  padding: 10px
+  
+}
+.aboutSection {
+  background-color: rgb(51, 51, 51);
+  width: 99;
+  height: 800px;
+  border-radius: 6px;
+  font-size: 2rem;
+  color: white; 
+  padding: 10px
+}
+
+.introHeader {
+font-style: italic;
+}
+
+.aboutHeader {
+  font-style: italic;
+}
+.projectsHeader {
+  font-style: italic;
+}
+
+.introContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Keeps text & image in a row */
+  background-color: rgb(51, 51, 51);
+  /* padding: 20px; */
+  border-radius: 6px;
+  width: 80%;
+  margin: auto;
+}
+
+.aboutContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Keeps text & image in a row */
+  background-color: rgb(51, 51, 51);
+  padding: 20px;
+  border-radius: 6px;
+  width: 80%;
+  margin: auto;
+}
+
+.slideshow-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.active-slide {
+  width: 600px; /* Adjust as needed */
+  height: 750px;
+  object-fit: cover;
+  border-radius: 6px;
+  transition: opacity 1s ease-in-out;
+  border-color: white;
+  border: 2px;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+.skillsSection {
+  text-align: left;
+}
+.listSkills{
+  display: flex;
+  ul{
+    margin-right: 60px;
+  }
+}
+
+/* Style for the grid container */
+.projectsContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  object-fit: cover;
+}
+
+.projectsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  gap: 20px; /* space between images */
+  max-width: 90%; /* Set max-width for responsiveness */
+  margin-top: 20px;
+}
+
+/* Style for each project item (image square) */
+.projectItem {
+  display: block;
+  width: 300px; /* Fixed width for each item */
+  height: 300px; /* Fixed height for each item */
+  overflow: hidden;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+/* Hover effect */
+.projectItem:hover {
+  transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+/* Style for the clickable image background (if using background images) */
+.projectImage {
+  width: 100%;
+  height: 100%;
+  background-color: #f0f0f0; /* Default color for background */
+  background-size: cover; /* Make background image cover the container */
+  background-position: center; /* Center the image */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  font-size: 24px; /* Bigger font size */
+  font-weight: bold;
+  text-align: center;
+  border-radius: 10px;
+}
+
+/* If using <img> elements inside the div */
+.projectImage img {
+  width: 100%; /* Ensure the image fills the container */
+  height: 100%; /* Make the image the full height of the div */
+  object-fit: cover; /* Make sure the image covers the div */
+  border-radius: 10px; /* Round the corners of the image */
+}
+
+/* Text inside the image block */
+.projectImage span {
+  display: inline-block;
+  margin: 0 auto;
+  background-color: white;
+  color: black;
+  border-radius: 10px;
+  padding-left: 5px;
+  padding-right: 5px;;
+}
+
+
