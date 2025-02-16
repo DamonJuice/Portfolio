@@ -49,7 +49,7 @@
 .aboutSection {
   background-color: rgb(51, 51, 51);
   width: 99;
-  height: 1000px;
+  height: 800px;
   border-radius: 6px;
   font-size: 2rem;
   color: white; 
@@ -72,7 +72,7 @@ font-style: italic;
   align-items: center;
   justify-content: space-between; /* Keeps text & image in a row */
   background-color: rgb(51, 51, 51);
-  padding: 20px;
+  /* padding: 20px; */
   border-radius: 6px;
   width: 80%;
   margin: auto;

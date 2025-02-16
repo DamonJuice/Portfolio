@@ -47,17 +47,5 @@ createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <Links />
     <App />
-    <footer>        
-      {/* Social media icons */}
-      <p>© 2025 Damon Stangel </p>
-        <a className="igLogo" href="https://www.instagram.com/damonjuice/" target="_blank">
-          <img src="src/assets/IG LOGO.png" alt="Instagram Logo" />
-        </a>
-        <a className="linkedLogo" href="https://www.linkedin.com/in/damon-stangel-80155626b/" target="_blank">
-          <img src="dis/assets/linkedIn logo.png" alt="LinkedIn Logo" />
-        </a>
-        <a className="gitLogo" href="https://github.com/DamonJuice" target="_blank">
-          <img src="src/assets/git logo.png" alt="GitHub logo" />
-        </a></footer>
   </StrictMode>
 )

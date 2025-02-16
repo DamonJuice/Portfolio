@@ -77,8 +77,23 @@ function App() {
         </div>
       </section>
 
+      <section id="about" className="section">
+      <h1 className='aboutHeader'>About Me</h1>
+      <div className="aboutContainer">
+        <div className='aboutSection'>
+          <p>
+            I'm Damon Stangel, a passionate Application Developer with a strong background in front-end development. 
+            With experience in technologies like TypeSCript, React, Node.js, and Python, I strive to build seamless and efficient web applications.
+          </p>
+          <p>
+            I enjoy solving complex problems and working on innovative projects that push the boundaries of modern web development.
+          </p>
+        </div>
+      </div>
+    </section>
+
       {/* PROJECTS SECTION */}
-      <section id="projects" className="section">
+      <section id="projects" className="section" style={{ backgroundImage: `url('public/assets/animatedRetroGameBG.gif')`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
         <h1 className='projectsHeader'>Projects</h1>
         <div className="projectsContainer">
           <div className="projectsGrid">
