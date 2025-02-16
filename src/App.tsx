@@ -11,7 +11,9 @@ import retroGameBG from "./assets/animatedRetroGameBG.gif";
 const images = [icon, oldIcon, bsuFlowers, famPic];
 
 const projectLinks = [
-  { url: "https://github.com/yourusername/project1", image: project1Image },
+  { url: "https://github.com/yourusername/project1", image: project1Image }
+  // { url: "https://github.com/yourusername/project2", image: project2Image },
+  // { url: "https://github.com/yourusername/project3", image: project3Image }
 ];
 
 function App() {
