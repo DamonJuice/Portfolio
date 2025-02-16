@@ -138,7 +138,7 @@ button:focus-visible {
   font-weight: 600;
   padding: 4px 12px; 
   border-radius: 6px; 
-  background-color: rgba(0, 0, 0, 0.877); 
+  background-color: rgba(43, 43, 43, 0.877); 
   transition: background-color 0.3s ease, transform 0.2s ease;
   display: flex;
   margin: 0 5px;
@@ -147,7 +147,12 @@ button:focus-visible {
   color: #646cff;
 }
 
-a.nameTIME{
+.nav-links {
+  display: flex;
+  /* display: flex; */
+}
+
+.nameTIME{
   padding-left: 10px;
   color: #ffffff;
 }
@@ -156,10 +161,9 @@ a.nameTIME{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
-  height: 40px;
-  /* max-width: 550px; 
-  gap: 1px; */
+  width: 90%;
+  max-width: 1200px;
+  position: relative;
 }
 
 
@@ -174,8 +178,7 @@ a.nameTIME{
   justify-content: center;
   align-items: center;
   width: 100%;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  padding: 10px 0;
   position: fixed;
   top: 0;
   left: 0;
@@ -217,7 +220,7 @@ html {
 
 
 .hamburger {
-  display: flex;
+  display: none;
   flex-direction: column;
   gap: 5px;
   border: none;
@@ -236,7 +239,7 @@ html {
 /* Dropdown menu */
 .dropdown {
   position: absolute;
-  top: 60px; /* Adjust based on where you want it */
+  top: 60px;
   right: 0;
   width: 100%;
   height: 100;
@@ -244,7 +247,9 @@ html {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
+  align-items: center;
   padding: 10px;
+  z-index: 999;
 }
 
 .dropdown-link {
@@ -258,11 +263,17 @@ html {
   background-color: #f0f0f0;
 }
 
-
+/* Responsive Styles */
+@media (max-width: 768px) {
   .nav-links {
     display: none;
-    /* display: flex; */
   }
+
+  .hamburger {
+    display: flex;
+  }
+}
+
 
 
 
