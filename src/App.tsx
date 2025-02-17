@@ -61,7 +61,7 @@ function App() {
                   <li>C#</li>
                 </ul>
                 <ul>
-                  <li>Javascript</li>
+                  <li>Lighthouse (DevTools)</li>
                   <li>OpenSearch API</li>
                   <li>Vite</li>
                   <li>AWS</li>

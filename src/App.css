@@ -27,33 +27,42 @@
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
 .read-the-docs {
   color: #888;
 }
 
+.introContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgb(51, 51, 51);
+  /* padding: 20px; */
+  border-radius: 6px;
+  width: 80%;
+  margin: auto;
+}
+
 .introSection {
   background-color: rgb(51, 51, 51);
-  width: 50%;
+  width: 70vh;
+  height: 70vh;
+  /* max-width: 60vh; */
   border-radius: 6px;
   font-size: 2rem;
   color: white; 
   padding: 10px
-  
+
 }
+
 .aboutSection {
   background-color: rgb(51, 51, 51);
-  width: 99;
-  height: 800px;
+  width: 100%; /* Use full width */
+  height: auto; /* Let it adjust height */
+  max-height: 800px; /* Add max height */
   border-radius: 6px;
   font-size: 2rem;
-  color: white; 
-  padding: 10px
+  color: white;
+  padding: 10px;
 }
 
 .introHeader {
@@ -67,26 +76,17 @@ font-style: italic;
   font-style: italic;
 }
 
-.introContainer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between; /* Keeps text & image in a row */
-  background-color: rgb(51, 51, 51);
-  /* padding: 20px; */
-  border-radius: 6px;
-  width: 80%;
-  margin: auto;
-}
 
 .aboutContainer {
   display: flex;
   align-items: center;
-  justify-content: space-between; /* Keeps text & image in a row */
+  justify-content: space-between;
   background-color: rgb(51, 51, 51);
   padding: 20px;
   border-radius: 6px;
   width: 80%;
   margin: auto;
+  height: 80%;
 }
 
 .slideshow-wrapper {
@@ -94,16 +94,51 @@ font-style: italic;
   display: flex;
   justify-content: center;
   align-items: center;
+  max-width: 1300px
 }
 
 .active-slide {
-  width: 600px; /* Adjust as needed */
+  width: 80%; /* Adjust as needed */
+  max-width: 600px; /* Maximum width for larger screens */
   height: 750px;
   object-fit: cover;
   border-radius: 6px;
   transition: opacity 1s ease-in-out;
   border-color: white;
   border: 2px;
+}
+
+/* Mobile optimization */
+@media (max-width: 768px) {
+  .active-slide {
+    width: 90%; 
+    height: auto; 
+    display: none; /* Hides image slideshow on mobile for now */
+  }
+  .introContainer {
+    flex-direction: column;  /* Stack items vertically on smaller screens */
+    width: 90%;
+  }
+  .aboutContainer {
+    flex-direction: column;  /* Stack items vertically on smaller screens */
+    width: 90%;
+  }
+
+  .introSection {
+    width: 90%;
+    height: auto;
+  }
+
+  .aboutSection {
+    width: 90%;
+    height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .active-slide {
+    width: 100%; /* Full width on very small screens */
+  }
 }
 
 .slide.active {
