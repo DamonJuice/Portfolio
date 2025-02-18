@@ -25,8 +25,9 @@ function Links() {
         {!isMobile && (
           <div className="nav-links">
             <a href="#intro" className="nav-link">Intro</a>
-            <a href="#about" className="nav-link">About Me</a>
             <a href="#projects" className="nav-link">Projects</a>
+            <a href="#about" className="nav-link">Contact</a>
+            
           </div>
         )}
 
@@ -43,8 +44,8 @@ function Links() {
         {isMobile && isMenuOpen && (
           <div className="dropdown">
             <a href="#intro" className="dropdown-link" onClick={() => setIsMenuOpen(false)}>Intro</a>
-            <a href="#about" className="dropdown-link" onClick={() => setIsMenuOpen(false)}>About Me</a>
             <a href="#projects" className="dropdown-link" onClick={() => setIsMenuOpen(false)}>Projects</a>
+            <a href="#about" className="dropdown-link" onClick={() => setIsMenuOpen(false)}>Contact</a>
           </div>
         )}
       </div>

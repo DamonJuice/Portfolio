@@ -38,64 +38,72 @@ function App() {
           <div className='introSection'>
             <p>
               Hello, my name is Damon Stangel. I'm currently an Application Developer for <a href='https://www.prowestgis.com/' target="_blank"> Pro-West & Associates Inc</a>. 
-              I consider myself a skilled front-end developer and application developer, who is passionate about building interactive web experiences.
+              I consider myself a skilled front-end developer and application developer, who's passionate about building interactive web experiences and applications.
             </p>
+            <div className="resumeButtonDiv">
             <p>Download my resume!</p>
             <a href="public/resume.pdf" download="Damon Stangel Resume.pdf">
-            <button>Download PDF</button></a>
-            &nbsp;
-            <p className="skillsSection">
-              My skills include: 
+            <button className="buttonColorChange">Download PDF</button></a>
+            </div>
+            <div className="aboutContainer">
+          <p className="skillsSection">
+              
               <div className="listSkills">
-                <ul>
-                  <li>TypeScript</li>
-                  <li>Python</li>
-                  <li>Angular</li>
-                  <li>mySQL</li>
-                  <li>Node.js</li>
-                </ul>
-                <ul>
-                  <li>Esri Javascript 4x API</li>
-                  <li>.NET</li>
-                  <li>React</li>
-                  <li>C#</li>
-                </ul>
-                <ul>
-                  <li>Lighthouse (DevTools)</li>
-                  <li>OpenSearch API</li>
-                  <li>Vite</li>
-                  <li>AWS</li>
-                </ul>
-              </div>
+  {/* Front End Skills */}
+  <div>
+    <h3>Front End</h3>
+    <ul>
+      <li>TypeScript</li>
+      <li>Angular</li>
+      <li>React</li>
+      <li>Esri Javascript 4x API</li>
+      <li>Vite</li>
+    </ul>
+  </div>
+
+  {/* Back End Skills */}
+  <div>
+    <h3>Back End</h3>
+    <ul>
+      <li>Python</li>
+      <li>Node.js</li>
+      <li>.NET</li>
+      <li>C#</li>
+      <li>mySQL</li>
+    </ul>
+  </div>
+
+{/* DevOps & Tools */}
+  <div>
+  <h3>DevOps & Tools</h3>
+  <ul>
+    <li>AWS (Some exp.)</li>
+    <li>OpenSearch API</li>
+    <li>Lighthouse (DevTools)</li>
+    <li>Docker</li>
+    <li>Git/GitHub</li>
+    <li>CI/CD (GitHub Actions, Jenkins, etc.)</li>
+  </ul>
+</div>
+</div>
             </p>
-          </div>
-          <div className="slideshow-wrapper">
-            <img
-              src={images[currentIndex]}
-              className="active-slide"
-              alt="Slideshow"
-            />
+        </div>
           </div>
         </div>
       </section>
 
-      <section id="about" className="section">
-      <h1 className='aboutHeader'>About Me</h1>
-      <div className="aboutContainer">
-        <div className='aboutSection'>
-          <p>
-            I'm Damon Stangel, a passionate Application Developer with a strong background in front-end development. 
-            With experience in technologies like TypeSCript, React, Node.js, and Python, I strive to build seamless and efficient web applications.
-          </p>
-          <p>
-            I enjoy solving complex problems and working on innovative projects that push the boundaries of modern web development.
-          </p>
-        </div>
-      </div>
-    </section>
+        {/* PROJECTS SECTION */}
+  <section
+  id="projects"
+  className="section"
+  style={{
+    backgroundImage: `url(${retroGameBG})`,  /* Corrected syntax */
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+  }}
+>
 
-  {/* PROJECTS SECTION */}
-  <section id="projects" className="section" style={{ backgroundImage: `url(${retroGameBG})`,backgroundSize: 'cover', backgroundPosition: 'center' }}>
+    {/* <section id="projects" className="section" style={{ backgroundImage: `url(${retroGameBG})`,backgroundSize: 'cover', backgroundPosition: 'center' }}> */}
   <h1 className='projectsHeader'>Projects</h1>
         <div className="projectsContainer">
           <div className="projectsGrid">
@@ -112,6 +120,19 @@ function App() {
           </div>
         </div>
       </section>
+
+      <section id="about" className="section">
+      <h1 className='aboutHeader'>Contact Info</h1>
+          <div className="slideshow-wrapper">
+            <img
+              src={images[currentIndex]}
+              className="active-slide"
+              alt="Slideshow"
+            />
+
+          </div>
+
+    </section>
     </>
   );
 }
