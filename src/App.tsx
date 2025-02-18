@@ -42,7 +42,7 @@ function App() {
             </p>
             <div className="resumeButtonDiv">
             <p>Download my resume!</p>
-            <a href="public/resume.pdf" download="Damon Stangel Resume.pdf">
+            <a href="/resume.pdf" download="Damon Stangel Resume.pdf">
             <button className="buttonColorChange">Download PDF</button></a>
             </div>
             <div className="aboutContainer">
