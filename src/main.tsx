@@ -5,6 +5,7 @@ import App from './App.tsx';
 
 function Links() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
   useEffect(() => {
@@ -17,39 +18,11 @@ function Links() {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   return (
-    <nav className="nav-bar">
-      <div className="nav-container">
-        {!isMobile && (
-          <div className="nav-links">
-            <a href="#intro" className="nav-link">Intro</a>
-            <a href="#projects" className="nav-link">Projects</a>
-            <a href="#about" className="nav-link">Contact</a>
-            
-          </div>
-        )}
-
-        <a className="nameTIME">Damon Stangel</a>
-
-        {isMobile && (
-          <button className="hamburger" onClick={toggleMenu}>
-            <span className="bar"></span>
-            <span className="bar"></span>
-            <span className="bar"></span>
-          </button>
-        )}
-
-        {isMobile && isMenuOpen && (
-          <div className="dropdown">
-            <a href="#intro" className="dropdown-link" onClick={() => setIsMenuOpen(false)}>Intro</a>
-            <a href="#projects" className="dropdown-link" onClick={() => setIsMenuOpen(false)}>Projects</a>
-            <a href="#about" className="dropdown-link" onClick={() => setIsMenuOpen(false)}>Contact</a>
-          </div>
-        )}
-      </div>
-    </nav>
+    <div className='rootDiv'> </div>
   );
 }
 
