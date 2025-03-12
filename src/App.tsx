@@ -33,9 +33,9 @@ function App() {
     <>
       {/* INTRO SECTION */}
       <section id="intro" className="section">
-        <h1 className='introHeader'>Intro</h1>
-        <div className="introContainer">
-          <div className='introSection'>
+
+        <div className="aboutContainer">
+          <div className="introP"> 
             <p>
               Hello, my name is Damon Stangel. I'm currently an Application Developer for <a href='https://www.prowestgis.com/' target="_blank"> Pro-West & Associates Inc</a>. 
               I consider myself a skilled front-end developer and application developer, who's passionate about building interactive web experiences and applications.
@@ -45,23 +45,22 @@ function App() {
             <a href="/resume.pdf" download="Damon Stangel Resume.pdf">
             <button className="buttonColorChange">Download PDF</button></a>
             </div>
-            <div className="aboutContainer">
+            </div>
+
           <p className="skillsSection">
               
               <div className="listSkills">
-  {/* Front End Skills */}
   <div>
     <h3>Front End</h3>
     <ul>
       <li>TypeScript</li>
       <li>Angular</li>
       <li>React</li>
-      <li>Esri Javascript 4x API</li>
+      <li>Javascript</li>
       <li>Vite</li>
+      <li>HTML & CSS</li>
     </ul>
   </div>
-
-  {/* Back End Skills */}
   <div>
     <h3>Back End</h3>
     <ul>
@@ -72,32 +71,26 @@ function App() {
       <li>mySQL</li>
     </ul>
   </div>
-
-{/* DevOps & Tools */}
   <div>
   <h3>DevOps & Tools</h3>
   <ul>
-    <li>AWS (Some exp.)</li>
     <li>OpenSearch API</li>
     <li>Lighthouse (DevTools)</li>
     <li>Docker</li>
     <li>Git/GitHub</li>
+    <li>AWS (Some exp.)</li>
     <li>CI/CD (GitHub Actions, Jenkins, etc.)</li>
   </ul>
 </div>
 </div>
             </p>
         </div>
-          </div>
-        </div>
       </section>
-
-        {/* PROJECTS SECTION */}
   <section
   id="projects"
   className="section"
   style={{
-    backgroundImage: `url(${retroGameBG})`,  /* Corrected syntax */
+    backgroundImage: `url(${retroGameBG})`,
     backgroundSize: 'cover',
     backgroundPosition: 'center',
   }}
