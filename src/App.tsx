@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect,useLayoutEffect } from "react";
 import "./App.css";
 import icon from "./assets/icon.jpg";
 import oldIcon from "./assets/oldIcon.png";
@@ -50,7 +50,7 @@ function App() {
     return () => clearInterval(interval);
   }, []);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     document.documentElement.setAttribute(
       "data-theme",
       isDarkMode ? "dark" : "light"
@@ -87,7 +87,7 @@ function App() {
         </div>
       </section>
       <section id="aboutMe" className="section hidden">
-  <h2> <i>About Me </i></h2>
+  <h1> <i>About Me </i></h1>
   <div className="aboutSection">
     <div className="aboutList">
       {/* Circular Image */}
@@ -119,7 +119,7 @@ function App() {
 
 
 <section id="skillSection" className="section hidden">
-  <h2><i>Skills</i></h2>
+  <h1><i>Skills</i></h1>
   <div className="skillsSectionDiv">
             <div className="listSkills">
               <div>
@@ -158,43 +158,140 @@ function App() {
             </div>
 
           </div>
-          <div className="langIcons">
+          <div 
+            className="langIcons" style={{ filter: isDarkMode ? "invert(1)" : "invert(0)" }}>
+
+
                     <img src="https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/typescript.svg" alt="TS" className="tech-icon"/>
-                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/cplusplus.svg" alt="C++" className="tech-icon"/>
+                    {/* <img src="https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/html5.svg" alt="HTML5" className="tech-icon"/> */}
                     <img src="https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/angular.svg" alt="Angular" className="tech-icon"/>
-                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/python.svg" alt="Python" className="tech-icon"/>
+                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/dotnet.svg" alt=".NET" className="tech-icon"/>
+                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/mysql.svg" alt="mySQL" className="tech-icon"/>
+                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/react.svg" alt="React" className="tech-icon"/>
+                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/javascript.svg" alt="JavaScript" className="tech-icon"/>
+          </div>
+</section>
+<section id="projectsSection" className="section hidden">
+<div className="container mx-auto px-4 max-w-6xl projects-container">
+<div className="w-full text-center">
+  <h1 className="text-4xl font-bold mb-8 font-space-mono">
+    <i>Projects</i>
+  </h1>
+</div>
+  <div className="projectsGrid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                  <div className="project-tile">
+                    <div className="project-thumbnail mb-4 " onClick={() => window.open("https://github.com/DamonJuice", "_blank")}>
+                      <img 
+                          src="https://opengraph.githubassets.com/1/" 
+                          alt="Project X" 
+                          className="w-full h-full object-cover"
+                      />
+                      <div className="redirect-icon">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" data-lucide="external-link" className="lucide lucide-external-link">
+                              <path d="M15 3h6v6"></path>
+                              <path d="M10 14 21 3"></path>
+                              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                          </svg>
+                      </div>
+                    </div>
+                      <h3 className="text-xl font-bold mb-2">Project X</h3>
+                      <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">WORK IN PROGRESS</p>
+                      <a href="https://github.com/DamonJuice" target="_blank" className="read-more">
+                          Find More{" "}   
+                          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" data-lucide="github" className="lucide lucide-github"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
+                      </a>
+                  </div>
+                  <div className="project-tile">
+                    <div className="project-thumbnail mb-4 " onClick={() => window.open("https://github.com/DamonJuice", "_blank")}>
+                      <img 
+                          src="https://opengraph.githubassets.com/1/" 
+                          alt="Project X" 
+                          className="w-full h-full object-cover"
+                      />
+                      <div className="redirect-icon">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" data-lucide="external-link" className="lucide lucide-external-link">
+                              <path d="M15 3h6v6"></path>
+                              <path d="M10 14 21 3"></path>
+                              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                          </svg>
+                      </div>
+                    </div>
+                      <h3 className="text-xl font-bold mb-2">Project Y</h3>
+                      <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">Scheduled Project</p>
+                      <a href="https://github.com/DamonJuice" target="_blank" className="read-more">
+                          Find More{" "}   
+                          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" data-lucide="github" className="lucide lucide-github"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
+                      </a>
+                  </div>
                 </div>
+            </div>
 </section>
 <section id="contactSection" className="section hidden">
-<div>
-                <h2><i>Contact Me</i></h2>
-                <nav className="nav-container">
-                    <a href="https://github.com/DamonJuice" className="nav-link text-xl md:text-2xl text-gray-600 dark:text-gray-400 font-bold" target="_blank" rel="noopener noreferrer">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="github" className="lucide lucide-github w-6 h-6"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
-                        Github
-                    </a>
-                    <a href="/resume.pdf" download="Damon Stangel Resume.pdf" className="nav-link text-xl md:text-2xl text-gray-600 dark:text-gray-400 font-bold">
+<div className="text-center mt-10">
+  <h2 className="font-italic text-xl"><i><u>Contact Me</u></i></h2>
+  
+  <nav className="flex flex-wrap justify-center items-center gap-6 mt-4">
+    
+    {/* GitHub */}
+    <a href="https://github.com/DamonJuice" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center">
+      <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path>
+        <path d="M9 18c-4.51 2-5-2-7-2"></path>
+      </svg>
+      <span className="mt-1 text-sm font-semibold">{" "}  GitHub{" "}{" "}    </span>
+    </a>
 
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="file-text" className="lucide lucide-file-text w-6 h-6"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path><path d="M14 2v4a2 2 0 0 0 2 2h4"></path><path d="M10 9H8"></path><path d="M16 13H8"></path><path d="M16 17H8"></path></svg>
-                        Resume
-                    </a>
-                    <a href="https://www.linkedin.com/in/damon-stangel-80155626b/" className="nav-link text-xl md:text-2xl text-gray-600 dark:text-gray-400 font-bold" target="_blank" rel="noopener noreferrer">
+    {/* Resume */}
+    <a href="/resume.pdf" download="Damon Stangel Resume.pdf" className="flex flex-col items-center">
+      <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path>
+        <path d="M14 2v4a2 2 0 0 0 2 2h4"></path>
+        <path d="M10 9H8"></path>
+        <path d="M16 13H8"></path>
+        <path d="M16 17H8"></path>
+      </svg>
+      <span className="mt-1 text-sm font-semibold">{" "}  Resume{" "}{" "}    </span>
+    </a>
 
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="linkedin" className="lucide lucide-linkedin w-6 h-6"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-                        LinkedIn
-                    </a>
-                    <a href="https://instagram.com/damonjuice" className="nav-link text-xl md:text-2xl text-gray-600 dark:text-gray-400 font-bold" target="_blank" rel="noopener noreferrer">
+    {/* LinkedIn */}
+    <a href="https://www.linkedin.com/in/damon-stangel-80155626b/" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center">
+      <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+        <rect width="4" height="12" x="2" y="9"></rect>
+        <circle cx="4" cy="4" r="2"></circle>
+      </svg>
+      <span className="mt-1 text-sm font-semibold">{" "}  LinkedIn{" "} {" "}   </span>
+    </a>
 
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="instagram" className="lucide lucide-instagram w-6 h-6"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
-                        Instagram
-                    </a>
-                    <a href="mailto:damonstangel@gmail.com" className="nav-link text-xl md:text-2xl text-gray-600 dark:text-gray-400 font-bold">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="mail" className="lucide lucide-mail w-6 h-6"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
-                        Contact
-                    </a>
-                </nav>
-              </div>
+    {/* Instagram */}
+    <a href="https://instagram.com/damonjuice" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center">
+      <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+        <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+      </svg>
+      <span className="mt-1 text-sm font-semibold">{" "}  Instagram{" "}{" "}    </span>
+    </a>
+
+    {/* Email */}
+    <a href="mailto:damonstangel@gmail.com" className="flex flex-col items-center">
+      <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+      </svg>
+      <span className="mt-1 text-sm font-semibold">{" "}  Contact{" "}{" "}    </span>
+    </a>
+
+  </nav>
+</div>
+
+
+
+
 </section>
+<footer id="footerSection">
+© 2025 Damon Stangel Portfolio. Built using React & Vite.
+</footer>
     </>
   );
 }

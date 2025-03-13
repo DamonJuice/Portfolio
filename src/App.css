@@ -79,6 +79,9 @@ a:hover {
   50% { transform: translateX(-50%) translateY(10px); }
 }
 
+#footerSection {
+  background-color: black;
+}
 
 #aboutMe {
   min-height: 30vh;
@@ -94,7 +97,15 @@ a:hover {
   padding-top: 50px;
   padding-bottom: 50px;
   transition: background-color 0.3s ease, color 0.3s ease;
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
+
+/* #contactSection nav{
+  display: flex;
+  align-items: center;
+} */
+
 .nav-container {
     display: flex;
     flex-wrap: wrap;
@@ -103,11 +114,18 @@ a:hover {
     font-size: x-large;
 }
 
+#projectSection{
+  background-color: var(--background-color);
+  color: var(--text-color);
+  padding-top: 30px;
+}
+
 #skillSection {  
   background-color: var(--background-color);
   color: var(--text-color);
   min-height: 40vh;
-  padding-top: 50px;
+  padding-top: 20px;
+  padding-bottom: 20px;
     }
 
 
@@ -181,10 +199,15 @@ h1 span {
   max-width: 1400px;
 }
 
+#projectsSection h1{
+padding-bottom: 20px;
+}
+
 .aboutList div{
   min-width: 250px;
   min-height: 200px;
-  background-color: rgba(255, 255, 255, 0.1);
+  /* background-color: rgba(255, 255, 255, 0.1); */
+  background-color: rgb(2 0 0 / 15%);
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
@@ -196,10 +219,10 @@ h1 span {
 .listSkills div {
   min-width: 250px;
   min-height: 200px;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgb(2 0 0 / 15%);
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 10px rgba(8, 153, 211, 0.3);
   transition: transform 0.3s ease;
   text-align: left;
 }
@@ -282,10 +305,20 @@ h3 {
 
 .projectsContainer {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
+  flex-direction: column; /* Ensures header stays on top */
+  align-items: center; /* Centers content */
+  text-align: center;
 }
+
+
+.projectsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  width: 100%; /* Make sure it doesn’t squeeze the header */
+}
+
 
 .projectsGrid {
   display: grid;
@@ -298,25 +331,54 @@ h3 {
   text-decoration: none;
 }
 
-.projectImage {
-  width: 250px;
-  height: 150px;
-  /* background-size: cover; */
-  /* background-position: center; */
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.2rem;
-  color: white;
-  font-weight: bold;
-  transition: transform 0.3s ease;
+.project-thumbnail {
+  position: relative; /* Keeps .redirect-icon inside */
+  overflow: hidden; /* Prevents extra overlay */
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
 }
 
-.projectImage:hover {
-  transform: scale(1.1);
+.project-thumbnail img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease-in-out; /* Ensures image scales smoothly */
 }
+
+.project-thumbnail:hover img {
+  transform: scale(1.1); /* Slight zoom effect */
+}
+
+.project-thumbnail:hover .redirect-icon {
+  opacity: 1;
+  background-color: rgba(0, 0, 0, 0.5); /* Ensures dimming happens only on hover */
+}
+
+.redirect-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  cursor: pointer;
+}
+
+.project-thumbnail:hover .redirect-icon {
+  opacity: 1;
+  background-color: rgba(0, 0, 0, 0.5); /* Ensures dimming happens only on hover */
+}
+
+.redirect-icon svg {
+  color: white;
+  width: 2rem;
+  height: 2rem;
+}
+
 
 /* Light/Dark Mode Toggle Button */
 .themeToggle {
@@ -338,22 +400,20 @@ h3 {
   background-color: var(--button-hover-bg);
 }
 
-/* Theme Variables */
+
 :root {
-  --background-color: #121212;
-  --text-color: #ffffff;
-  /* Button styles for light mode */
-  --button-bg: rgba(0, 0, 0, 0.8);
-  --button-text: white;
-  --button-border: black;
-  --button-hover-bg: rgba(0, 0, 0, 1);
+  --background-color-light: #f9f9f9; 
+  --background-color-dark: #1a1a1a; 
+  --text-color-light: #333;
+  --text-color-dark: #f9f9f9;
+  --card-background-light: #e0e0e0; 
+  --card-background-dark: #2b2b2b; 
 }
 
 [data-theme="dark"] {
-  --background-color: black;
-  --text-color: white;
-
-  /* Button styles for dark mode */
+  --background-color: var(--background-color-dark);
+  --text-color: var(--text-color-dark);
+  --card-background: var(--card-background-dark);
   --button-bg: rgba(255, 255, 255, 0.2);
   --button-text: white;
   --button-border: white;
@@ -361,10 +421,9 @@ h3 {
 }
 
 [data-theme="light"] {
-  --background-color: #ffffff;
-  --text-color: #000000;
-
-  /* Button styles for light mode */
+  --background-color: var(--background-color-light);
+  --text-color: var(--text-color-light);
+  --card-background: var(--card-background-light);
   --button-bg: rgba(0, 0, 0, 0.8);
   --button-text: white;
   --button-border: black;
@@ -372,25 +431,44 @@ h3 {
 }
 
 [data-theme="dark"] .section {
-  background-color: rgb(17 24 39 / var(--tw-bg-opacity, 1)); /* Dark teal/green */
-  color: #ffffff; /* Light teal */ 
+  background-color: rgb(17 24 39 / var(--tw-bg-opacity, 1));
+  color: #ffffff;
+  padding-top: 20px;
+  padding-bottom: 40px;
 }
 
 [data-theme="light"] .section {
   background-color: #76adff; 
   color: #000000; 
+  padding-top: 20px;
+  padding-bottom: 40px;
   h3 {
     color: black;
   }
 }
 
 
+[data-theme="light"] #footerSection {
+  background-color: #76adff; 
+  color: #000000; 
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+[data-theme="dark"] #footerSection {
+  background-color: rgb(17 24 39 / var(--tw-bg-opacity, 1));
+  color: #ffffff;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+
 .langIcons {
   display: flex;
   justify-content: space-evenly;
-  align-items: center; 
-  flex-wrap: wrap; 
-  margin-top: 20px; 
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
   padding: 10px;
 }
 
@@ -423,6 +501,55 @@ h3 {
   100% { background-position: 0% 50%; }
 }
 
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.max-w-6xl {
+  max-width: 72rem;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+@media (min-width: 1536px) {
+  .container {
+      max-width: 1536px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+      max-width: 1280px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+      max-width: 1024px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+      max-width: 768px;
+  }
+}
+
+@media (min-width: 640px) {
+  .container {
+      max-width: 640px;
+  }
+}
+
+.container {
+  width: 100%;
+}
+
 
 @media (max-width: 768px) {
   body {
@@ -430,6 +557,59 @@ h3 {
     min-height: 100vh; /* Ensure proper height */
     width: 100%;
     overflow-x: hidden;
+  }
+
+  .projects-container {
+    max-width: 100%; /* Override max-w-6xl */
+    width: 90%; /* Ensures it doesn’t stretch too wide */
+    margin: 0 auto; /* Keeps it centered */
+    padding: 0 1rem; /* Adjust padding */
+  }
+
+  .projectsGrid {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center;
+    width: 100%;
+    max-width: 90vw;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  .project-card {
+    width: 90%; /* Keep width within viewport */
+    max-width: 400px;
+    margin: 10px auto; /* Center each card */
+  }
+
+  .project-thumbnail {
+    width: 100%; /* Makes sure images stay responsive */
+    max-width: 90%; 
+    margin: 0 auto;
+  }
+
+  .project-thumbnail img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .langIcons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    place-items: center;
+    margin-top: 20px;
+    padding: 10px;
+    max-width: 90%;
+    margin-left: auto; 
+    margin-right: auto; 
+}
+
+  .tech-icon {
+    width: auto;
+    height: 50px;
   }
   
   h1 {
@@ -492,7 +672,7 @@ h3 {
   /* Fix Skills Section */
   .skillsSectionDiv {
     text-align: center;
-    padding: 10px;
+    /* padding: 10px; */
     margin-top: 20px;
   }
 
@@ -516,6 +696,10 @@ h3 {
 }
 
   .listSkills div {
+    background-color: var(--card-background);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
     width: 100%; 
     max-width: 90%;
     text-align: center;
@@ -589,7 +773,7 @@ h3 {
 
   .listSkills div, .aboutList div {
     width: 100%;
-    max-width: 100%;
+    /* max-width: 100%; */
     text-align: center;
     box-sizing: border-box;
     padding: 10px;
@@ -603,6 +787,10 @@ h3 {
     padding: 8px 12px;
     border-radius: 4px;
     cursor: pointer;
+  }
+
+  #contactSection nav{
+    display: flex;
   }
 }
 
